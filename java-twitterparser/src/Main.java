@@ -92,6 +92,7 @@ public class Main {
 		tweets.useDelimiter("\\{new\\}");
 		
 		JSONObject nextTweet;
+		JSONObject userObject;
 		String outputString;
 		while(tweets.hasNext()) {
 			nextTweet = (JSONObject) JSONValue.parse(tweets.next()); 
@@ -101,7 +102,13 @@ public class Main {
 				outputString += formList.get(i);
 				//May be one more form string than arg string
 				if(i < argList.size()) {
-					outputString += nextTweet.get(argList.get(0));
+					//If it's a user arg, then we need to extract that from the JSON user object
+					if(argList.get(i).equals("user:id")) {
+						userObject = (JSONObject) JSONValue.parse(nextTweet.get("user").toString());
+						outputString += userObject.get("id");
+					} else {
+						outputString += nextTweet.get(argList.get(i));
+					}
 				}
 			}
 			

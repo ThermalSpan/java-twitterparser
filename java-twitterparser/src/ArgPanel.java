@@ -36,7 +36,7 @@ public class ArgPanel extends JPanel{
 		scrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//This information can be retrieved though a REST Api, this should be added as a feature in the future. 
-		String options[] = {"annotations", "contributors", "coordinates", "created_at", "current_user_retweet", "entities", "favorite_count", "favorited", "filter_level", "geo", "id", "id_str", "in_reply_to_screen_name", "in_reply_to_status_id", "in_reply_to_status_id_str", "in_reply_to_user_id", "in_reply_to_user_id_str", "lang", "place", "possibly_sensitive", "scopes", "retweet_count", "retweeted", "retweeted_status", "source", "text", "truncated", "user", "withheld_copyright", "withheld_in_countries", "withheld_scope", "screen_name", "type"};
+		String options[] = {"annotations", "contributors", "coordinates", "created_at", "current_user_retweet", "entities", "favorite_count", "favorited", "filter_level", "geo", "id", "id_str", "in_reply_to_screen_name", "in_reply_to_status_id", "in_reply_to_status_id_str", "in_reply_to_user_id", "in_reply_to_user_id_str", "lang", "place", "possibly_sensitive", "scopes", "retweet_count", "retweeted", "retweeted_status", "source", "text", "truncated", "user", "user:id", "withheld_copyright", "withheld_in_countries", "withheld_scope", "screen_name", "type"};
 		final JComboBox<String> comboBox = new JComboBox<String>();
 		for(int i = 0; i< options.length; i++){
 			comboBox.addItem(options[i]);
